@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
   carousel: { flex: 1 },
 });
 
-const slideList = Array.from({ length: 6 }).map((_, i) => {
+const slideList = Array.from({ length: 3 }).map((_, i) => {
   return {
     id: i,
-    image: `https://source.unsplash.com/collection/202=${i}`,
+    image: `https://picsum.photos/2842/1440?random=${i}`,
     title: `This is the title ${i + 1}!`,
     subtitle: `This is the subtitle ${i + 1}!`,
   };
@@ -54,9 +54,7 @@ const slideList = Array.from({ length: 6 }).map((_, i) => {
 const Slide = memo(function Slide({ data }) {
   return (
     <View style={styles.slide}>
-      <Image source={{ uri: data.image }} style={styles.slideImage}></Image>
-      {/* <Text style={styles.slideTitle}>{data.title}</Text>
-      <Text style={styles.slideSubtitle}>{data.subtitle}</Text> */}
+      <Image source={{uri:data.image}} style={styles.slideImage}></Image>
     </View>
   );
 });
@@ -134,7 +132,7 @@ export default function Carousel() {
         showsHorizontalScrollIndicator={false}
         bounces={false}
         onScroll={onScroll}
-        {...flatListOptimizationProps}
+      {...flatListOptimizationProps}
       />
       <Pagination index={index}></Pagination>
     </>

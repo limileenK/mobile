@@ -13,7 +13,7 @@ const Room = ({ item }) => {
     setMessages([
       {
         _id: 1,
-        text: 'ฉันคือ ' + item.name,
+        text: 'ฉันคือ ' + item.emm_user_id,
         createdAt: new Date(),
         user: {
           _id: 2,
@@ -31,14 +31,14 @@ const Room = ({ item }) => {
   return (
     <>
       <Container>
-        <Header androidStatusBarColor="#F57C00" style={{ backgroundColor: '#F57C00' }}>
+        <Header androidStatusBarColor="#ff5722" style={{ backgroundColor: '#ff5722' }}>
           <Left>
             <Button transparent style={{ width: 30 }} onPress={Actions.message}>
               <Icon name="chevron-left" color="white" />
             </Button>
           </Left>
           <Body >
-            <Text style={{ color: 'white',fontFamily:'Kanit-Regular' }}>{item.name}</Text>
+            <Text style={{ color: 'white',fontFamily:'Kanit-Regular' }}>{item.emm_user_id}</Text>
           </Body>
           <Right />
         </Header>

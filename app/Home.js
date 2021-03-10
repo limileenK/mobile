@@ -1,34 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Card,
-    Row,
     Col,
     Item,
     Input,
     Container,
     Header,
     Content,
-    Footer,
-    FooterTab,
     Button,
-    Text
+    Text,
+    CardItem,
+    Left
 } from 'native-base';
 import { observer } from 'mobx-react'
-import { MyAppText, Dimensions, TouchableOpacity, View, StyleSheet, ScrollView } from 'react-native'
-import { Actions, ActionConst } from 'react-native-router-flux'
+import { Image, View, StyleSheet, ScrollView,TouchableOpacity } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Carousel from './compHome/Carousel';
-import CardJa from './compHome/CardJa';
 import { TextTitle, TextThin, TextExtraLight, TextLight, TextRegular, TextMedium, TextSemiBold, TextBold, TextExtraBold, TextBlack } from './font'
+// import { TouchableOpacity } from 'react-native-gesture-handler';
+const Home = (props) => {
+    const [dataCate, setDataCate] = useState([]);
 
-const Home = () => {
+    useEffect(() => {
+        fetch("http://192.168.43.219/testCodeif4/public/show_work1")
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                setDataCate(data);
+            });
+    }, [])
     return (
         <Container style={{ fontFamily: 'Kanit-Regular' }}>
-            <Header androidStatusBarColor="#F57C00" searchBar rounded style={{backgroundColor:'#F57C00'}}>
+            <Header androidStatusBarColor="#ff5722" searchBar rounded style={{ backgroundColor: '#ff5722' }}>
                 <Col style={styles.boxSearch}>
                     <Item style={styles.search} >
                         <Icon name="search" />
-                        <Input placeholder="ค้นหางาน" style={{fontFamily:'Kanit-Light'}} />
+                        <Input placeholder="ค้นหางาน" style={{ fontFamily: 'Kanit-Light' }} />
                         <Icon name="users" />
                     </Item>
                     <Button transparent>
@@ -43,7 +52,34 @@ const Home = () => {
                     scrollEnabled={true}
                 >
                     <Carousel />
-                    <CardJa />
+                    <Content style={{ padding: 5 }}>
+                        <View style={styles.container}>
+                            {dataCate.map((selectpost) => {
+                                return (
+                                    <View style={styles.item}>
+                                        <TouchableOpacity onPress={() => Actions.selectpost({ selectpost })} key={selectpost.aw_id}>
+                                            <Card >
+
+                                                <CardItem cardBody>
+                                                    <Image source={{ uri: selectpost.w_img_name }} style={{ height: 150, width: null, flex: 1 }} />
+                                                </CardItem>
+                                                <CardItem>
+                                                    <Text>{selectpost.aw_name}</Text>
+                                                </CardItem>
+                                                <CardItem footer>
+                                                    <Left>
+                                                        <Text>5,000</Text>
+                                                    </Left>
+                                                  
+                                                </CardItem>
+                                            </Card>
+                                        </TouchableOpacity>
+
+                                    </View>
+                                )
+                            })}
+                        </View>
+                    </Content>
                 </ScrollView>
             </Content>
         </Container>
@@ -52,6 +88,15 @@ const Home = () => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'flex-start' // if you want to fill rows left to right
+    },
+    item: {
+        width: '50%'// is 50% of container width
+    },
     logo: {
         zIndex: 1,
         bottom: 35,

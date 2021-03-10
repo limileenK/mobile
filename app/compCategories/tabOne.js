@@ -6,7 +6,7 @@ const tabOne = () => {
   const [dataInfo, setDataInfo] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.43.46:80/projectalumni/index.php/alumni/alumnilist")
+    fetch("http://192.168.43.219/testCodeif4/public/maincate")
       .then((response) => {
         return response.json();
       })
@@ -23,7 +23,7 @@ const tabOne = () => {
             <Body>
               {dataInfo.map((data) => {
                 return (
-                    <Text key={data.id}>{data.id}. {data.u_fname} {data.u_lname}</Text>
+                    <Text key={data.main_cate_id}>{data.main_cate_name}</Text>
                 )
               })}
             </Body>

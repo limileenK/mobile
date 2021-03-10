@@ -58,7 +58,7 @@ const App: () => React$Node = () => {
                 <DebugInstructions />
               </Text>
             </View>
-            <View style={styles.sectionContainer}>
+            <View style={styles.sectionConta0iner}>
               <Text style={styles.sectionTitle}>Learn More</Text>
               <Text style={styles.sectionDescription}>
                 Read the docs to discover what to do next:

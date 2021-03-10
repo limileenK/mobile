@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 const Profile = () => {
     return (
         <Container>
-            <Header androidStatusBarColor="#F57C00" style={{ backgroundColor: '#F57C00' }}>
+            <Header androidStatusBarColor="#ff5722" style={{ backgroundColor: '#ff5722' }}>
                 <Body>
                     <TextTitle>โปรไฟล์</TextTitle>
                 </Body>
@@ -44,7 +44,7 @@ const Profile = () => {
                 <Col>
                     <ListItem icon>
                         <Left>
-                            <Button style={{ backgroundColor: "#FF9501" }}>
+                            <Button style={{ backgroundColor: "#ff5722" }}>
                                 <Icon active name="random" color="white" />
                             </Button>
                         </Left>
