@@ -60,7 +60,7 @@ const Home = () => {
                                 </CardItem>
                                 <CardItem footer>
                                     <Left>
-                                        <Text>5,000</Text>
+                                        <Text >5,000</Text>
                                     </Left>
                                 </CardItem>
                             </Card>

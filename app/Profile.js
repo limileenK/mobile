@@ -31,7 +31,7 @@ const Profile = () => {
                                 <Image style={styles.profile} source={{ uri: 'https://iconarchive.com/download/i87177/graphicloads/colorful-long-shadow/User-group.ico' }} />
                             </Col>
                             <Col>
-                                <Button block style={{ width: '60%', margin: 1, alignSelf: 'center' }} info>
+                                <Button block style={{ width: '60%', margin: 1, alignSelf: 'center' }} info onPress={Actions.loginv2}>
                                     <TextExtraLight>เข้าสู่ระบบ</TextExtraLight>
                                 </Button>
                                 <Button block style={{ width: '60%', margin: 1, alignSelf: 'center' }}>

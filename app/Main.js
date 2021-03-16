@@ -14,12 +14,11 @@ import { TextTitle, TextThin, TextExtraLight, TextLight, TextRegular, TextMedium
 import Room from './compMessage/Room'
 import pstore from './model/personal'
 import SelectPost from './SelectPost';
-
-
+// import LoginV3 from './LoginV3';
 
 const styles = StyleSheet.create({
     root: {
-      backgroundColor:'red'
+        backgroundColor: 'red'
         // marginBottom:'-100px'
     },
     tabBar: {
@@ -114,14 +113,15 @@ const Main = () => {
         <Router personalstore={pstore} hideNavBar={true} wrapBy={observer} duration={200} >
             <Stack key='root' hideNavBar={true} >
                 <Scene key='Tabbar' showLabel={false} tabs={true} tabBarStyle={styles.tabBar} default='Main'>
-                    <Scene key='home' initial={true} component={Home} hideNavBar={true} title='Home' icon={RecommendTab} />
-                    <Scene key='categories' component={Categories} hideNavBar={true} title='Categories' icon={CategoriesTab} />
+                    <Scene key='home'   component={Home} hideNavBar={true} title='Home' icon={RecommendTab} />
+                    <Scene key='categories' initial={true} component={Categories} hideNavBar={true} title='Categories' icon={CategoriesTab} />
                     <Scene key='message' component={Message} hideNavBar={true} title='Message' icon={MessageTab} />
                     <Scene key='notification' component={Notifications} hideNavBar={true} title='Notification' icon={NotificationTab} />
                     <Scene key='profile' component={Profile} hideNavBar={true} title='Profile' icon={ProfileTab} />
                 </Scene>
                 <Scene key='selectpost' component={SelectPost} title='Post' />
                 <Scene key='room' component={Room} title='Room' />
+                {/* <Scene key='loginv3' initial={true} component={LoginV3} title='loginv3' /> */}
                 <Scene key='login' component={Login} title='Login' />
             </Stack>
         </Router >
