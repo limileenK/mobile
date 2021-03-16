@@ -14,7 +14,7 @@
     "@ui-kitten/components": "^5.0.0",
     "autobind-decorator": "^2.4.0",
     "axios": "^0.21.1",
-    "expo": "^40.0.0",
+    "expo": "^40.0.1",
     "expo-cli": "^4.0.17",
     "expo-font": "~8.4.0",
     "firebase": "^8.2.3",

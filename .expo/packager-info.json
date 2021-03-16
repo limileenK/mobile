@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19000,
-  "expoServerNgrokUrl": "https://bc-fzb.anonymous.test1.exp.direct",
-  "packagerNgrokUrl": "https://packager.bc-fzb.anonymous.test1.exp.direct",
-  "ngrokPid": 11012,
+  "expoServerNgrokUrl": "https://bc-fzb.anonymous.rn-flashwork.exp.direct",
+  "packagerNgrokUrl": "https://packager.bc-fzb.anonymous.rn-flashwork.exp.direct",
+  "ngrokPid": 2692,
   "packagerPid": null,
   "webpackServerPort": null
 }
